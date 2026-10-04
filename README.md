@@ -26,6 +26,7 @@ Ensure the following are installed in your Linux environment:
 * **Java 8 or 11** (Required for Apache Spark)
 * **Docker** (Used by the script to automatically launch a MongoDB container)
 
+---
 ## 2. Environment Setup
 We recommend using a virtual environment to manage dependencies:
 ```bash
@@ -36,12 +37,14 @@ source .venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 ```
+---
 ## 3. Starting Services
 The following script automates the setup. It creates the virtual environment, installs Airflow and dependencies, launches a **MongoDB container** (Docker), and initializes the Airflow database and admin user.
 ```
 chmod +x start_env.sh
 ./start_env.sh
 ```
+---
 ## 4. Running the Pipeline
 
 You can trigger and monitor the DAG in two ways:
@@ -63,6 +66,7 @@ Run our custom orchestrator. It will trigger a new DAG run and provide a real-ti
 
 *Note: If you run the python script, you can also open the browser to see how the run advances using the same URL.* 
 
+---
 ## 5. Shutting Down
 
 To safely terminate all background processes, including the Airflow scheduler, the webserver, and the MongoDB Docker container, run:
@@ -72,6 +76,7 @@ chmod +x stop_env.sh
 ```
 *Note:Remember to type `deactivate` in your terminal to exit the Python virtual environment. *
 
+---
 ## 6. Project Structure
 This is a brief guide for orientation purposes and in case anything should fail: 
 
@@ -103,7 +108,7 @@ proj2_BDA/
 ```
 ---
 
-Authors: 
+## Authors: 
 
 Ona Siscart Noguer
 
