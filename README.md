@@ -1,15 +1,25 @@
 # Barcelona Rental Prediction Pipeline (BDA Project)
-
-Authors: 
-
-Ona Siscart Noguer
-
-Aina Vila Arbusà
-
 ---
 
 This project implements an end-to-end Data Engineering pipeline using **Apache Airflow**, **Apache Spark**, and **MongoDB**. It automates the collection, formatting, and processing of Barcelona's rental and social data to perform predictive analysis on neighborhood prices.
 
+Urban rental markets are driven by factors beyond mere real estate supply. In rapidly evolving metros like Barcelona, hyper-local livability drivers—specifically **urban safety (traffic hazards and incident density)** and **cultural accessibility (proximity to landmarks and institutions)** exert significant pressure on residential market valuations.
+
+This project delivers an automated, scalable **Data Engineering & Predictive Analytics Platform** designed to ingest heterogeneous urban datasets, harmonize spatial-temporal granularities, and deploy machine learning models that classify neighborhood rental price tiers. 
+
+### Key Technical Highlights
+* **Automated Multi-Source Ingestion:** Batch and streaming ingestion using **PySpark** handling multi-cadence datasets (Daily pricing, Weekly cultural sites, Annual accident records).
+* **Lakehouse Architecture:** Structured multi-layer data pipeline progressing from a Raw Landing Zone to a **MongoDB** Formatted Zone (Idempotent upserts, strict typing) and a **Delta Lake** Exploitation Zone (ACID transactions, time travel).
+* **Robust Granularity Harmonization:** Automated spatial-temporal roll-ups aggregating micro-level data into normalized `(Neighborhood, Year)` keys with semantic null-handling logic.
+* **Production MLOps Lifecycle:** Distributed training with **Spark ML**, hyperparameter cross-validation, experiment tracking, and automated model registration using **MLflow**.
+* **One-Command Orchestration:** Fully containerized setup via **Docker**, orchestrated using **Apache Airflow** with real-time terminal dashboards and automated failure diagnostics.
+
+### Technical & Architecture Report
+
+For a deep dive into architectural trade-offs, schema evolution strategies, target-driven join semantics, and model benchmarking results, refer to the report containing all design decisions and results:
+ **[Read the Design Decisions & Engineering Report (PDF)](design_decisions_report.pdf)**
+
+---
 ## 1. Prerequisites
 Ensure the following are installed in your Linux environment:
 * **Python 3.10+**
@@ -91,3 +101,10 @@ proj2_BDA/
 ├── start_env.sh             # Service initialization script
 └── stop_env.sh              # Service termination script
 ```
+---
+
+Authors: 
+
+Ona Siscart Noguer
+
+Aina Vila Arbusà
