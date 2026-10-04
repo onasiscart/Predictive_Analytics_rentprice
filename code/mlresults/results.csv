@@ -1,0 +1,13 @@
+model,metric,value,training_time
+Decision Tree,Accuracy,0.768595,72.907664
+Decision Tree,Recall,0.768595,72.907664
+Decision Tree,Precision,0.780813,72.907664
+Decision Tree,F1,0.772133,72.907664
+Random Forest,Accuracy,0.690083,136.004502
+Random Forest,Recall,0.690083,136.004502
+Random Forest,Precision,0.697307,136.004502
+Random Forest,F1,0.693158,136.004502
+Logistic Regression,Accuracy,0.623967,160.040482
+Logistic Regression,Recall,0.623967,160.040482
+Logistic Regression,Precision,0.609994,160.040482
+Logistic Regression,F1,0.612617,160.040482

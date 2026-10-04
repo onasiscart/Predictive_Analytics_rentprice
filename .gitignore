@@ -1,0 +1,10 @@
+mlruns/
+*.crc
+*.parquet
+*.snappy
+code/data/
+code/logs/
+code/airflow_home/logs/
+*.log
+__pycache__/
+.ipynb_checkpoints/

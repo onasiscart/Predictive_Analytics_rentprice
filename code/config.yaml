@@ -1,0 +1,45 @@
+
+# ---- GLOBAL CONFIGURATION ----
+
+project:
+  name: "Barcelona Price Predicion Pipeline"
+
+paths:
+  landing_zone: "data/landing_zone"
+  exploitation_zone: "data/exploitation_zone"
+  logs_dir: "logs"
+  price_source_file: "data/raw_data/price_data.json"
+  landing_subfolders:
+    prices: "price_data"
+    accidents: "accident_data"
+    culture: "cultural_data"
+
+metadata:
+  prices: "metadata_prices.json"
+  accidents: "metadata_accidents.json"
+  culture: "metadata_culture.json"
+
+database:
+  mongo_uri: "mongodb://127.0.0.1:27017"
+  db_name: "formatted_zone" 
+  collections:
+    prices: "price_data"
+    accidents: "accident_data"
+    culture: "cultural_data"
+
+spark:
+  master: "local[*]"
+  log_level: "WARN"
+  #MongoDB package and Delta Lake configurations
+  mongodb_package: "org.mongodb.spark:mongo-spark-connector_2.12:10.3.0,io.delta:delta-spark_2.12:3.2.0"
+  delta_extensions: "io.delta.sql.DeltaSparkSessionExtension"
+  delta_catalog: "org.apache.spark.sql.delta.catalog.DeltaCatalog"
+
+
+api_endpoints:
+  # Base URL API
+  api_base_url: "https://opendata-ajuntament.barcelona.cat/data/api/3/action"
+  # ACCIDENTS
+  accidents_dataset_id: "e769eb9d-d778-4cd7-9e3a-5858bba49b20"
+  # CULTURAL
+  cultural_dataset: "punts-informacio-turistica"
